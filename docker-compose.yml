@@ -4,13 +4,10 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_USER: "postgres"
+      POSTGRES_USERNAME: "postgres"
       POSTGRES_PASSWORD: "admin"
-
     ports:
-      - 15432:5432
-    volumes:
-      - C:\Users\Padrao\Documents\resistendia-API/data:var/lib/postgresql/data
+      - 5432:5432
     networks:
       - postgres-network
 
@@ -19,7 +16,6 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin@sefaz.gov.ac.gov.br"
       PGADMIN_DEFAULT_PASSWORD: "admin"
-
     ports:
       - "1543:80"
     depends_on:
